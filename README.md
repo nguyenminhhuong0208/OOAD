@@ -1,3 +1,8 @@
+# Yêu cầu các bạn lúc code chung:
++ code xong cái gì thì comment tác dụng của cái đó (người ta có nhắc ở trong vid)
++ Deadline cứ linh động lên. Đảm bảo chất lượng cho web không lỗi gì mới gửi người kia code tiếp. Nếu có lỗi thì ghi hẳn ra lỗi gì vào file readme đính kèm để người kia biết nhé
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

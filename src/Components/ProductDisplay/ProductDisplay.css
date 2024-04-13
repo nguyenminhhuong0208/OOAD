@@ -49,11 +49,11 @@
     font-size: 24px;
     font-weight: 700;
 }
-.productdisplay-right-price_old{
+.productdisplay-right-price-old{
     color: #818181;
     text-decoration: line-through;
 }
-.productdisplay-right-price_new
+.productdisplay-right-price-new
 {
     color: #ff4141;
 }
@@ -64,7 +64,7 @@
     font-weight: 600;
 }
 
-.productdisplay-right-size{
+.productdisplay-right-sizes{
     display: flex;
     margin: 30px 0px;
     gap: 20px;

@@ -1,12 +1,14 @@
-import React, { useState } from 'react' 
+import React, { useContext, useState } from 'react' 
 import './Navbar.css'
 import logo from '../Assets/logo.png'
 import cart_icon from '../Assets/cart_icon.png'
 import { Link } from 'react-router-dom'
+import { ShopContext } from '../../Context/ShopContext'
 // import { Link } from 'react-router-dom'
 const Navbar = () =>{
-    const [menu,setMenu] = useState("shop") /*Usestate là một hàm có sẵn của react. Cứ đúng công thwucs mà dùng */
+    const [menu,setMenu] = useState("shop") /*Usestate là một hàm có sẵn của react. Cứ đúng công thức mà dùng */
     /*Việc để mỗi cái một class thế này sẽ rất tiện trong việc điều chỉnh css */
+    const {getTotalCartItems} = useContext(ShopContext);
     return (
         
         <div className='navbar'>
@@ -24,7 +26,7 @@ const Navbar = () =>{
             <div className='nav-login-cart'>
                 <button>login</button> {/*Dòng này là nút bấm login */}
                 <img src={cart_icon} alt = "" /> {/* Dòng này để show icon cart */}
-                <div className='nav-cart-count'>0</div>
+                <div className='nav-cart-count'>{getTotalCartItems()}</div>
             </div>
         </div>
     )

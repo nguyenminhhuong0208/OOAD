@@ -3,6 +3,8 @@ import { ShopContext } from '../Context/ShopContext'
 import {useParams} from 'react-router-dom'
 import Breadcrum from '../Components/Breadcrums/Breadcrum'
 import { ProductDisplay } from '../Components/ProductDisplay/ProductDisplay'
+import { DescriptionBox } from '../Components/DescriptionBox/DescriptionBox'
+import { RelatedProducts } from '../Components/RelatedProducts/RelatedProducts'
 
 
 const Product = () => {
@@ -13,8 +15,13 @@ const Product = () => {
 
   return (
     <div>
+      {/* phần breadcum là phần mà HOME > SHOP > Women... */}
+      {/* Phần description box đã nói trong file description box.jsx */}
+      {/*Phần related product là phần ở bên dưới description box */}
       <Breadcrum product={product}/>
       <ProductDisplay product={product}/>
+      <DescriptionBox/>
+      <RelatedProducts/>
     </div>
   )
 }

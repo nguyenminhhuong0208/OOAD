@@ -59,3 +59,61 @@
     /* height: 900px; */
     
 }
+/*điều chỉnh kích thước tiêu đề*/
+
+@media(max-width: 800px)
+{
+    .hero-left
+    {
+        padding-left: 80px;
+    }
+    .hero-left h2
+    {
+        font-size: 20px;
+    }
+    .hero-left p
+    {
+        font-size: 40px;
+    }
+    .hero-hand-icon img
+    {
+        width: 50px;
+    }
+    .hero-latest-btn
+    {
+        width: 180px;
+        height: 40px;
+        font-size: 14px;
+
+    }
+    .hero-right img{
+        width: 300px;
+    }
+}
+
+@media(max-width: 500px)
+{
+    .hero
+    {
+        flex-direction: column;
+    }
+    .hero-right{
+        display:none;
+    }
+    .hero-left h2{
+        font-size: 18px;
+    }
+    .hero-left p{
+        font-size: 3=50px;
+    }
+    .hero-hand-icon img{
+        width: 55px;
+    }
+    .hero-lastest-btn{
+        width : 20px;
+        height: 45px;
+        font-size: 14px;
+        
+    }
+
+}

@@ -18,7 +18,7 @@ export const Hero = () => {
             </div>
             <div className="hero-latest-button">
                 <div>Latest Collection</div>
-                <img src={arrow_icon}></img>
+                <img src={arrow_icon} alt=""></img>
             </div>
         </div>
         <div className="hero-right">

@@ -1,9 +1,9 @@
 import React from "react";
-import "./Footer.css";
 import footer_logo from "../Assets/logo_big.png";
 import instagram_icon from "../Assets/instagram_icon.png";
 import pintester_icon from "../Assets/pintester_icon.png";
 import whatsapp_icon from "../Assets/whatsapp_icon.png";
+import "./Footer.css";
 const Footer = () => {
   return (
     <div className="footer">

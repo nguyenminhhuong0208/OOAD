@@ -31,9 +31,9 @@ const ShopContextProvider = (props)=>{
             {
                 let itemInfo = all_product.find((product)=>product.id===Number(item))
                 totalAmount += itemInfo.new_price * cartItems[item];
-            }
-            return totalAmount;
+            }   
         }
+        return totalAmount;
     }
     {/*hiển thị số sản phẩm trên biểu tượng giỏ hàng */}
     const getTotalCartItems = () => {
@@ -43,8 +43,9 @@ const ShopContextProvider = (props)=>{
             {
                 totalItem += cartItems[item];
             }
-            return totalItem;
+            
         }
+        return totalItem;
     }
 
     const contextValue = {getTotalCartItems,getTotalCartAmount,all_product,cartItems,addToCart,removeFromCart};

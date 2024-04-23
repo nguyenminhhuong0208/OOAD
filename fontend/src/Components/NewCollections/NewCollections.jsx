@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./NewCollections.css";
-import new_collection from "../Assets/new_collections";
+//import new_collection from "../Assets/new_collections";
 import Item from "../Item/Item";
 const NewCollections = () => {
+  const[new_collection,setNew_collection] = useState([]);
+  useEffect(()=>{
+    fetch('http://localhost:4000/newcollections') // gọi API
+    .then((response)=>response.json()) //chuyển response từ json sang js object
+    .then((data)=>setNew_collection(data)); //cập nhật data vừa nhận được
+  },[])
   return (
     <div className="new-collections">
       <h1>NEW COLLECTIONS</h1>

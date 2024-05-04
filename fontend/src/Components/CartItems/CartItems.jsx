@@ -2,19 +2,21 @@ import React, { useContext } from "react";
 import "./CartItems.css";
 import { ShopContext } from "../../Context/ShopContext";
 import remove_icon from "../Assets/cart_cross_icon.png";
+import {useTranslation} from "react-i18next";
 
 const CartItems = () => {
-  const { getTotalCartAmount, all_product, cartItems, removeFromCart } =
-    useContext(ShopContext);
+  const { getTotalCartAmount, all_product, cartItems, removeFromCart } = useContext(ShopContext);
+  const {t} = useTranslation();
+
   return (
     <div className="cartitems">
       <div className="cartitems-format-main">
-        <p>Products</p>
-        <p>Title</p>
-        <p>Price</p>
-        <p>Quantity</p>
-        <p>Total</p>
-        <p>Remove</p>
+        <p>{t("Products")}</p>
+        <p>{t("Title")}</p>
+        <p>{t("Price")}</p>
+        <p>{t("Quantity")}</p>
+        <p>{t("Total")}</p>
+        <p>{t("Remove")}</p>
       </div>
       <hr />
 
@@ -48,33 +50,33 @@ const CartItems = () => {
 {/*phần mô tả phía dưới của giỏ hàng*/}
          <div className="cartitems-down">
             <div className="cartitems-total">
-                <h1>Cart Totals</h1>
+                <h1>{t("Cart Totals")}</h1>
                 <div>
                     {/*tổng sản phẩm trong giỏ hàng*/}
                     <div className="cartitems-total-item">
-                        <p>Subtotal</p>
+                        <p>{t("Subtotal")}</p>
                         <p>${getTotalCartAmount()}</p>
                     </div>
                     <hr />
                     <div className="cartitems-total-item">
-                        <p>Shipping Fee</p>
-                        <p>Free</p>
+                        <p>{t("Shipping Fee")}</p>
+                        <p>{t("Free")}</p>
                     </div>
                     <hr />
                     <div className="cartitems-total-item">
-                        <h3>Total</h3>
+                        <h3>{t("Total")}</h3>
                         <h3>${getTotalCartAmount()}</h3>
                     </div>
                 </div>
                 {/*checkout*/}
-                <button>PROCEED TO CHECKOUT</button>
+                <button>{t("PROCEED TO CHECKOUT")}</button>
             </div>
             {/*ô điền mã giảm giá*/}
             <div className="cartitems-promocode">
-                <p>If you have promo code, Enter it here</p>
+                <p>{t("If you have promo code, Enter it here")}</p>
                 <div className="cartitems-promobox">
-                    <input type="text" placeholder='promo code' />
-                    <button>Submit</button>
+                    <input type="text" placeholder={t("Promo code")} />
+                    <button>{t("Submit")}</button>
                 </div>
             </div>
         </div>

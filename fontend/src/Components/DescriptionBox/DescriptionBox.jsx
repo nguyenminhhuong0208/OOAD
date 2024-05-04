@@ -1,12 +1,14 @@
 import React from "react";
 import "./DescriptionBox.css";
+import { useTranslation } from "react-i18next";
 
 const DescriptionBox = () => {
+  const { t } = useTranslation();
   return (
     <div className="descriptionbox">
       <div className="descriptionbox-navigator">
-        <div className="descriptionbox-nav-box">Description</div>
-        <div className="descriptionbox-nav-box fade">Reviews (122)</div>
+        <div className="descriptionbox-nav-box">{t("Description")}</div>
+        <div className="descriptionbox-nav-box fade">{t("Reviews (122)")}</div>
       </div>
       <div className="descriptionbox-description">
         <p>

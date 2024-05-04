@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./NewCollections.css";
 //import new_collection from "../Assets/new_collections";
 import Item from "../Item/Item";
+import {useTranslation} from "react-i18next";
+
 const NewCollections = () => {
   const[new_collection,setNew_collection] = useState([]);
+  const {t} = useTranslation();
   useEffect(()=>{
     fetch('http://localhost:4000/newcollections') // gọi API
     .then((response)=>response.json()) //chuyển response từ json sang js object
@@ -11,7 +14,7 @@ const NewCollections = () => {
   },[])
   return (
     <div className="new-collections">
-      <h1>NEW COLLECTIONS</h1>
+      <h1>{t("NEW COLLECTIONS")}</h1>
       <hr />
       <div className="collections">
         {new_collection.map((item, idx) => {

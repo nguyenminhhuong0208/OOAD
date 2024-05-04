@@ -3,7 +3,10 @@ import "./ProductDisplay.css";
 import star_icon from "../Assets/star_icon.png";
 import star_dull_icon from "../Assets/star_dull_icon.png";
 import { ShopContext } from "../../Context/ShopContext";
+import {useTranslation} from "react-i18next";
+
 const ProductDisplay = (props) => {
+  const { t } = useTranslation();
   const { product } = props;
   const { addToCart } = useContext(ShopContext);
   return (
@@ -43,7 +46,7 @@ const ProductDisplay = (props) => {
           garment.
         </div>
         <div className="productdisplay-right-size">
-          <h1>Select Size</h1>
+          <h1>{t("Select Size")}</h1>
           <div className="productdisplay-right-sizes">
             <div>S</div>
             <div>M</div>
@@ -57,10 +60,10 @@ const ProductDisplay = (props) => {
             addToCart(product.id);
           }}
         >
-          ADD TO CART
+          {t("ADD TO CART")}
         </button>
         <p className="productdisplay-right-category">
-          <span>Category : </span>
+          <span>{t("Category")} : </span>
           Women, T-shirt, Crop Top
         </p>
         <p className="productdisplay-right-category">

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import './CSS/LoginSignup.css'
+import {useTranslation} from "react-i18next";
+
 const LoginSignup = () =>
 {
+    const {t} = useTranslation();
     const[state,setState]=useState("Login");
     const [formDate, setFormData] = useState({
         username:"",
@@ -55,19 +58,19 @@ const LoginSignup = () =>
     return (
         <div className="loginsignup">
             <div className="loginsignup-container">
-                <h1>{state}</h1>
+                <h1>{t(state)}</h1>
                 <div className="loginsignup-fields">
-                    {state==="Sign Up"?<input name='username' value={formDate.username} onChange={changeHandler} type = "text" placeholder="Your name" />:<></>}
-                    <input name = 'email' value={formDate.email} onChange={changeHandler} type="email" placeholder="Email Address" />
-                    <input name = 'password' value={formDate.password   } onChange={changeHandler} type="password" placeholder="Password"/>
+                    {state==="Sign Up"?<input name='username' value={formDate.username} onChange={changeHandler} type = "text" placeholder={t("Your name")} />:<></>}
+                    <input name = 'email' value={formDate.email} onChange={changeHandler} type="email" placeholder={t("Email Address")} />
+                    <input name = 'password' value={formDate.password   } onChange={changeHandler} type="password" placeholder={t("Password")}/>
                 </div>
-                <button onClick={()=>{state==="Login"?login():signup()}}>Continue</button>
+                <button onClick={()=>{state==="Login"?login():signup()}}>{t("Continue")}</button>
                 {state==="Sign Up"
-                ?<p className="loginsignup-login">Already have an account? <span onClick={()=>{setState("Login")}}>Login here</span></p>
-                :<p className="loginsignup-login">Create an account? <span onClick={()=>{setState("Sign Up")}}>Click here</span></p>}
+                ?<p className="loginsignup-login">{t("Already have an account?")} <span onClick={()=>{setState("Login")}}>{t("Login here")}</span></p>
+                :<p className="loginsignup-login">{t("Create an account?")} <span onClick={()=>{setState("Sign Up")}}>{t("Click here")}</span></p>}
                 <div className="loginsignup-agree">
                     <input type="checkbox" name="id="/>
-                    <p>By continuing, i agree to the terms of use & privacy policy</p>
+                    <p>{t("By continuing, i agree to the terms of use & privacy policy")}</p>
                 </div>
             </div>
         </div>

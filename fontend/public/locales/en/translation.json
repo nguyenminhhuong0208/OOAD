@@ -3,5 +3,68 @@
     "Men" : "Men",
     "Women" : "Women",
     "Kids" : "Kids",
-    "Login" : "Login"
+    "Login" : "Login",
+
+    "New Arrivals Only" : "New Arrivals Only",
+    "New" : "New",
+    "collections" : "collections",
+    "for everyone" : "for everyone",
+    "Latest Collection" : "Latest Collection",
+
+    "POPULAR IN WOMEN" : "POPULAR IN WOMEN",
+
+    "NEW COLLECTIONS" : "NEW COLLECTIONS",
+
+    "Products" : "Products",
+    "Title" : "Title",
+    "Price" : "Price",
+    "Quantity" : "Quantity",
+    "Total" : "Total",
+    "Remove" : "Remove",
+
+    "Select Size" : "Select Size",
+    "ADD TO CART": "ADD TO CART",
+    "Category" : "Category",
+    "Cart Totals" : "Cart Totals",
+    "Subtotal" : "Subtotal",
+    "Shipping Fee" : "Shipping Fee",
+    "Free" : "Free",
+    "Total" : "Total",
+    "If you have promo code, Enter it here" : "If you have promo code, Enter it here",
+    "PROCEED TO CHECKOUT" : "PROCEED TO CHECKOUT",
+    "Promo code" : "Promo code",
+    "Submit" : "Submit",
+
+    "Login" :"Login",
+    "Sign Up" : "Sign Up",
+    "Your name" : "Your name",
+    "Email Address" : "Email Address",
+    "Password" : "Password",
+    "Continue" : "Continue",
+    "Already have an account?" : "Already have an account?",
+    "Create an account?" : "Create an account?",
+    "Login here" : "Login here",
+    "Click here" : "Click here",
+    "By continuing, i agree to the terms of use & privacy policy" : "By continuing, i agree to the terms of use & privacy policy",
+
+   "Exclusive" : "Exclusive",
+    "Offers For You" : "Offers For You",
+    "Only On Best Seller Productsa" : "Only On Best Seller Productsa",
+    "Check Now" : "Check Now",
+
+   "Get Exclusive Offers On Your Email" : "Get Exclusive Offers On Your Email",
+    "Subscribe to our newsletter and stay updated" : "Subscribe to our newsletter and stay updated",
+    "Your Email Id" : "Your Email Id",
+    "Subscribe" : "Subscribe",
+
+    "Company" : "Company",
+    "Products"  :"Products",
+    "Offices"  :"Offices",
+    "About"  :"About",
+    "Contact" : "Contact",
+
+    "Related Products" : "Related Products",
+
+    "Description" : "Description",
+    "Reviews (122)" : "Reviews (122)"
   }

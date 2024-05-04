@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Popular.css";
+import { useTranslation } from "react-i18next";
+
 //import data_product from "../Assets/data";
 import Item from "../Item/Item";
 const Popular = () => {
   const[popularProducts,setPopularProducts] = useState([]);
+  const {t} = useTranslation();
+  
 
   useEffect(()=>{
     fetch('http://localhost:4000/popularinwomen')
@@ -13,7 +17,7 @@ const Popular = () => {
   
   return (
     <div className="popular">
-      <h1>POPULAR IN WOMEN</h1>
+      <h1>{t("POPULAR IN WOMEN")}</h1>
       <hr />
       <div className="popular-item">
         {popularProducts.map((item, idx) => { //thay data_product thành popularProducts

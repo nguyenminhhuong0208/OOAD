@@ -24,3 +24,46 @@
   display: flex;
   gap: 30px;
 }
+/*điều chỉnh kích thước ảnh sản phẩm*/
+@media(max-width: 1280px){
+  .popular{
+      height: 70vh;
+  }
+  .popular h1{
+      font-size: 40px;
+  }
+  .popular hr{
+      width: 150px;
+      height: 5px;
+  }
+  .popular-item{
+      margin-top: 30px;
+      gap: 20px;
+  }
+}
+@media(max-width: 800px){
+  .popular{
+      height: 50vh;
+      gap: 6px;
+  }
+  .popular h1{
+      font-size: 30px;
+  }
+  .popular hr{
+      width: 160px;
+      height: 3px;
+  }
+  .popular-item{
+      gap: 5px;
+  }
+}
+@media(max-width: 500px){
+  .popular{
+      height: 90vh;
+  }
+  .popular-item{
+      display: gird;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+  }
+}

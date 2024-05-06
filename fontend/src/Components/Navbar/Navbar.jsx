@@ -62,7 +62,7 @@ const Navbar = () => {
         </ul>
         <div className="nav-login-cart">
           {localStorage.getItem('auth-token')
-          ?<button onClick={()=>{localStorage.removeItem('auth-token'); window.location.replace('/')}}>Logout</button> //nếu đã login rồi thì hiện logout
+          ?<button onClick={()=>{localStorage.removeItem('auth-token'); window.location.replace('/')}}>{t("Logout")}</button> //nếu đã login rồi thì hiện logout
           :<Link to="/login"><button>{t("Login")}</button></Link>}
           <Link to="/cart">
             <img src={cart_icon} alt="cart-icon" />

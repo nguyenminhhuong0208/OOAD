@@ -10,12 +10,10 @@ import  Footer  from './Components/Footer/Footer';
 import men_banner from './Components/Assets/banner_mens.png'
 import women_banner from './Components/Assets/banner_women.png'
 import kid_banner from './Components/Assets/banner_kids.png'
-import LanguageSelector from "./Components/language-selector.jsx";
-import {Trans, useTranslation} from "react-i18next";
 
 
 function App() {
-  const {t} = useTranslation();
+
 
   return (
       <BrowserRouter>

@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ShopContext } from "../../Context/ShopContext";
 import {useTranslation} from "react-i18next";
-import LanguageSelector from "../language-selector.jsx";
+import LanguageSelector from "../Language-selector/language-selector.jsx";
 
 const Navbar = () => {
   const {t} = useTranslation();
@@ -68,8 +68,8 @@ const Navbar = () => {
             <img src={cart_icon} alt="cart-icon" />
           </Link>
           <div className="nav-cart-count">{getTotalCartItems()}</div>
-          <LanguageSelector />
         </div>
+        <LanguageSelector />
       </div>
   );
 };

@@ -47,3 +47,66 @@
   justify-content: flex-end;
   padding-top: 50px;
 }
+/* Chỉnh offer for you */
+@media(max-width: 1280px){
+  .offers{
+      height: 60vh;
+      padding: 0px 50px;
+      margin-bottom: 80px;
+  }
+  .offers-left h1{
+      font-size: 30px;
+  }
+  .offers-left p{
+      font-size: 16px;
+  }
+  .offers-right img{
+      width: 300px;
+  }
+  .offers-left button{
+      width: 200px;
+      height: 50px;
+      font-size: 18px;
+  }
+}
+@media(max-width: 1024px){
+  .offers{
+      height: 60vh;
+      padding: 0px 50px;
+      margin-bottom: 80px;
+  }
+  .offers-left h1{
+      font-size: 30px;
+  }
+  .offers-left p{
+      font-size: 16px;
+  }
+  .offers-right img{
+      width: 200px;
+  }
+  .offers-left button{
+      width: 160px;
+      height: 50px;
+      font-size: 18px;
+  }
+}
+@media(max-width: 500px){
+  .offers{
+      height: 25vh;
+      margin-bottom: 50px;
+  }
+  .offers-left h1{
+      font-size: 30px;
+  }
+  .offers-left p{
+      font-size: 10px;
+  }
+  .offers-right img{
+      width: 180px;
+  }
+  .offers-left button{
+      width: 120px;
+      height: 25px;
+      font-size: 12px;
+  }
+}

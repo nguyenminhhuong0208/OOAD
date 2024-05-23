@@ -73,3 +73,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ 
+### Mutil Language
+# npm
+$ npm install react-i18next
+
+# npm
+$ npm install i18next
+
+# npm package
+$ npm install i18next-http-backend
+
+# npm package
+$ npm install i18next-browser-languagedetector

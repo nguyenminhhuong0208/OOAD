@@ -147,7 +147,7 @@ const Users = mongoose.model("Users",{
 });
 
 // Creating Endpoint for regestering the user
-app.post('/signup', async(req,res)=>{
+app.post('F', async(req,res)=>{
 
     let check = await Users.findOne({email:req.body.email});
     if(check) {
@@ -176,26 +176,37 @@ app.post('/signup', async(req,res)=>{
 });
 
 // Creating Endpoint for login the user
-app.post('/login',async(req,res)=>{
-    let user = await Users.findOne({email:req.body.email});
+app.post('/login', async (req, res) => {
+    // Tìm người dùng trong cơ sở dữ liệu dựa trên email được cung cấp trong body của yêu cầu
+    let user = await Users.findOne({ email: req.body.email });
+
+    // Kiểm tra xem người dùng có tồn tại không
     if (user) {
+        // So sánh mật khẩu được cung cấp trong body của yêu cầu với mật khẩu của người dùng trong cơ sở dữ liệu
         const passCompare = req.body.password === user.password;
+
+        // Nếu mật khẩu khớp
         if (passCompare) {
+            // Tạo đối tượng dữ liệu để mã hóa trong JWT
             const data = {
                 user: {
                     id: user.id,
                 },
             };
-            const token = jwt.sign(data,'secret_ecom');
-            res.json({success:true,token});
+
+            // Ký JWT với dữ liệu người dùng và một khóa bí mật
+            const token = jwt.sign(data, 'secret_ecom');
+
+            // Gửi phản hồi thành công với JWT
+            res.json({ success: true, token });
+        } else {
+            // Nếu mật khẩu không khớp, gửi phản hồi lỗi
+            res.json({ success: false, errors: "Password is incorrect" });
         }
-        else {
-            res.json({success:false,errors:"Password is incorrect"});
-        }
-    } 
-    else {
-        res.json({success:false,errors:"User not found"});
-    } 
+    } else {
+        // Nếu người dùng không tồn tại, gửi phản hồi lỗi
+        res.json({ success: false, errors: "User not found" });
+    }
 });
 //creating endpoint for newcollection data
 app.get('/newcollections',async (req,res)=>{
@@ -213,7 +224,7 @@ app.get('/popularinwomen', async(req,res)=>{
     res.send(popular_in_women);
 })
 
-//creat middelware to fetch user
+//creat middelware to fetch user (nạp người dùng)
 const fetchUser = async(req,res,next)=>{
     const token = req.header('auth-token');
     if(!token){

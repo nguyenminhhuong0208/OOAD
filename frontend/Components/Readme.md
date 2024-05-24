@@ -1,0 +1,1 @@
+- trước lúc sử dụng search nhớ npm install react-icons ở terminal vscode frontend!

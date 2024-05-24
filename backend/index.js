@@ -67,6 +67,15 @@ const Product = mongoose.model("Product",{
         type:Number,
         require:true,
     },
+    // bổ sung thêp average rating và number of rating
+    aver_rating:{
+        type:Number,
+        require:true,
+    },
+    num_ratings:{
+        type:Number,
+        require:true,
+    },
     date:{
         type:Date,
         default:Date.now,
@@ -97,6 +106,9 @@ app.post('/addproduct', async(req,res)=>{
         category:req.body.category,
         new_price:req.body.new_price,
         old_price:req.body.old_price,
+        // bổ sung thêp average rating và number of rating
+        aver_rating:req.body.aver_rating,
+        num_ratings:req.body.num_ratings,
     });
     console.log(product);
     await product.save();

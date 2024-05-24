@@ -11,7 +11,9 @@ const AddProduct = () => {
     image:"",
     category:"women",
     new_price:"",
-    old_price:""
+    old_price:"",
+    aver_rating:"",
+    num_ratings:""
   })
 
   const imageHandler = (e) => {
@@ -70,6 +72,17 @@ const AddProduct = () => {
           <div className="addproduct-itemfield">
             <p>Offer Price</p>
             <input value={productDetails.new_price} onChange = {changeHandler} type="text" name='new_price' placeholder='Type here' />
+          </div>
+        </div>
+        {/*ô điền ratings */}
+        <div className="addproduct-ratings">
+          <div className="addproduct-itemfield">
+            <p>Average Rating</p>
+            <input value={productDetails.aver_rating} onChange={changeHandler} type="text" name='aver_rating' placeholder='Type here' />
+          </div>
+          <div className="addproduct-itemfield">
+            <p>Number Ratings</p>
+            <input value={productDetails.num_ratings} onChange = {changeHandler} type="text" name='num_ratings' placeholder='Type here' />
           </div>
         </div>
         {/*ô chọn loại sản phẩm */}

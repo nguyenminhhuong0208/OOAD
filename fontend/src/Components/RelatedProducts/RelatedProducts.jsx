@@ -1,14 +1,21 @@
-import React from "react";
+//import React from "react";
 import "./RelatedProducts.css";
-import data_product from "../Assets/data";
+//import data_product from "../Assets/data";
 import Item from "../Item/Item";
+import React, { useEffect, useState } from "react";
 const RelatedProducts = () => {
+  const[new_collection,setNew_collection] = useState([]);
+  useEffect(()=>{
+    fetch('http://localhost:4000/newcollections') // gọi API
+    .then((response)=>response.json()) //chuyển response từ json sang js object
+    .then((data)=>setNew_collection(data)); //cập nhật data vừa nhận được
+  },[])
   return (
     <div className="relatedproducts">
       <h1>Related Products</h1>
-      <hr />
+      <hr/>
       <div className="relatedproducts-item">
-        {data_product.map((item, idx) => {
+        {new_collection.map((item, idx) => {
           return (
             <Item
               key={idx}

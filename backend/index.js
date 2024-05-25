@@ -7,6 +7,9 @@ const multer = require('multer');
 const path = require('path');
 const cors = require('cors');
 const { log } = require('console');
+const axios = require('axios'); // Import axios
+
+
 
 app.use(express.json());
 app.use(cors());
@@ -136,6 +139,14 @@ app.get('/allproducts',async(req,res)=>{
     res.send(products);
 })
 
+app.get('/getproductbyname', async(req, res)=> {
+    let product = await Product.findOne({name: req.query.name})
+    if (!product) {
+        return res.status(404).json({ success: false, message: "Product not found" });
+    }
+    res.json({ success: true, message: "Get product by name successful.", data: product });
+})
+
 // Tạo Schema cho mô hình user
 
 const Users = mongoose.model("Users",{
@@ -196,10 +207,11 @@ app.post('/login',async(req,res)=>{
             const data = {
                 user: {
                     id: user.id,
+                    name: user.name // Thêm tên người dùng vào dữ liệu của token
                 },
             };
             const token = jwt.sign(data,'secret_ecom');
-            res.json({success:true,token});
+            res.json({success:true,token ,name: data.user.name});
         }
         else {
             res.json({success:false,errors:"Password is incorrect"});
@@ -209,10 +221,25 @@ app.post('/login',async(req,res)=>{
         res.json({success:false,errors:"User not found"});
     } 
 });
+// Thêm endpoint để lấy thông tin người dùng từ cơ sở dữ liệu
+app.get('/user', async (req, res) => {
+    try {
+        const user = await Users.findById(req.user.id);
+        if (!user) {
+            return res.status(404).json({ success: false, errors: "User not found" });
+        }
+        res.json({ success: true, user });
+    } catch (error) {
+        console.error("Error fetching user data:", error);
+        res.status(500).json({ success: false, errors: "Internal server error" });
+    }
+});
+
+
 //creating endpoint for newcollection data
 app.get('/newcollections',async (req,res)=>{
     let products = await Product.find({}); // truy vấn bảng Product trong DB
-    let newcollection = products.slice(1).slice(-8); //lấy 8 sản phẩm mới nhất từ danh sách
+    let newcollection = products.slice(1).slice(-4); //lấy 8 sản phẩm mới nhất từ danh sách
     console.log("NewCollection Fetched"); //thông báo lấy dữ liệu thành công
     res.send(newcollection);
 })
@@ -267,6 +294,26 @@ app.post('/getcart', fetchUser, async(req,res)=>{
     let userData = await Users.findOne({_id:req.user.id});
     res.json(userData.cartData);
 })
+
+// Creating endpoint for recommendations
+app.get('/recommend', async (req, res) => {
+    const { item_name, user_id } = req.query;
+    try {
+        const response = await axios.get(`http://localhost:4040/recommend/`, {
+            params: { item_name, user_id }
+        });
+        const recommendedItemIds = response.data.recommendations;
+
+        // Lấy thông tin chi tiết về sản phẩm dựa trên các ID được khuyến nghị
+        const recommendedItems = await Product.find({ name: { $in: recommendedItemIds } });
+
+        res.json(recommendedItems);
+    } catch (error) {
+        console.error("Error fetching recommendations:", error);
+        res.status(500).send("Error fetching recommendations");
+    }
+});
+
 
 app.listen(port, (error) => {
     if (!error) {

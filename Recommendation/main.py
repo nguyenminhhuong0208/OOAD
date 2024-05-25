@@ -43,5 +43,5 @@ async def get_recommendations(item_name: str, user_name):
         raise HTTPException(status_code=404, detail="Item not found")
 
     # Gọi hàm recommend để lấy các gợi ý dựa trên tên mặt hàng và tên người dùng
-    recommendations = recommend(item_name, df=df, user=user_name)
+    recommendations = recommend(item= item_name, df=df,user=user_name)
     return {"recommendations": recommendations}

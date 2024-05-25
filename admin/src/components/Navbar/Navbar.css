@@ -1,0 +1,48 @@
+/*thanh trên cùng*/
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 60px;
+    box-shadow: 0 1px 3px -2px #000;
+    margin-bottom: 1px;
+    background: white;
+}
+.nav-profile {
+    border-radius: 50%; /* Đây là thuộc tính để tạo khung tròn */
+    width: 100px; /* Độ rộng của bức ảnh */
+    height: 100px; /* Chiều cao của bức ảnh */
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 10px; /* Khoảng cách từ trên xuống */
+    right: 30px; /* Khoảng cách từ trái sang phải */
+  }
+  .admin-panel {
+    color: rgb(201, 153, 81); /* Màu chữ vàng */
+    font-size: 2em; /* Kích thước chữ gấp đôi */
+    position: absolute;
+    top: 40px;
+    left: 100px;
+  }
+  .nav-logo{
+    position: absolute;
+    top: 20px; /* Khoảng cách từ trên xuống */
+    left: 20px; /* Khoảng cách từ trái sang phải */
+  }
+  /*thay đổi kích thước theo giao diện*/
+  @media(max-width:800px){
+    .navbar{
+        padding: 45px 60px;
+    }
+    .nav-profile{
+        width: 75px;
+        height: 75px;
+    }
+    .admin-panel{
+        font-size: 30px;
+        top: 20px;
+        left: 100px;
+    }
+    .nav-logo{
+        width: 50px;
+    }
+  }

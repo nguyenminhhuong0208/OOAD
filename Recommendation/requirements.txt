@@ -1,0 +1,6 @@
+fastapi
+recommend
+numpy
+pandas
+random
+sklearn

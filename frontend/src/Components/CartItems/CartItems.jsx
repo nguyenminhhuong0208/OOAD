@@ -2,10 +2,15 @@ import React, { useContext } from "react";
 import "./CartItems.css";
 import { ShopContext } from "../../Context/ShopContext";
 import remove_icon from "../Assets/cart_cross_icon.png";
+import { useNavigate } from 'react-router-dom'; // mới thêm
 
 const CartItems = () => {
-  const { getTotalCartAmount, all_product, cartItems, removeFromCart } =
-    useContext(ShopContext);
+  const { getTotalCartAmount, all_product, cartItems, removeFromCart } = useContext(ShopContext);
+  const navigate = useNavigate();
+
+  const handleProceedToCheckout = () => {
+    navigate("/order-summary");
+  };
   return (
     <div className="cartitems">
       <div className="cartitems-format-main">
@@ -67,7 +72,7 @@ const CartItems = () => {
                     </div>
                 </div>
                 {/*checkout*/}
-                <button>PROCEED TO CHECKOUT</button>
+                <button onClick={handleProceedToCheckout}>PROCEED TO CHECKOUT</button>
             </div>
             {/*ô điền mã giảm giá*/}
             <div className="cartitems-promocode">

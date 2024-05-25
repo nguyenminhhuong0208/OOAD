@@ -6,6 +6,18 @@ import { ShopContext } from "../../Context/ShopContext";
 const ProductDisplay = (props) => {
   const { product } = props;
   const { addToCart } = useContext(ShopContext);
+  const renderStars = (rating) => { //hiển thị sao dựa trên average rating
+    const roundedRating = Math.round(rating);  // Làm tròn giá trị rating
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      if (i < roundedRating) {
+        stars.push(<img key={i} src={star_icon} alt="star" />);
+      } else {
+        stars.push(<img key={i} src={star_dull_icon} alt="star dull" />);
+      }
+    }
+    return stars;
+  };
   return (
     <div className="productdisplay">
       <div className="productdisplay-left">
@@ -22,12 +34,14 @@ const ProductDisplay = (props) => {
       <div className="productdisplay-right">
         <h1>{product.name}</h1>
         <div className="productdisplay-right-stars">
+          <p>{product.aver_rating}</p>
+          {/* <img src={star_icon} alt="" />
           <img src={star_icon} alt="" />
           <img src={star_icon} alt="" />
           <img src={star_icon} alt="" />
-          <img src={star_icon} alt="" />
-          <img src={star_dull_icon} alt="" />
-          <p>(122)</p>
+          <img src={star_dull_icon} alt="" /> */}
+          {renderStars(product.aver_rating)} {/*hiển thị sao*/} 
+          <p>({product.num_ratings})</p>
         </div>
         <div className="productdisplay-right-prices">
           <div className="productdisplay-right-price-old">

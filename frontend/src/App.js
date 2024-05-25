@@ -10,6 +10,8 @@ import  Footer  from './Components/Footer/Footer';
 import men_banner from './Components/Assets/banner_mens.png'
 import women_banner from './Components/Assets/banner_women.png'
 import kid_banner from './Components/Assets/banner_kids.png'
+import OrderSummary from "./Components/OrderSummary/OrderSummary"; // mới thêm
+// import Rating from './Components/Ratings/Ratings';
 
 
 function App() {
@@ -27,7 +29,9 @@ function App() {
           <Route path = ':productId' element={<Product/>} /> 
         </Route>
         
-        <Route path='/cart' element={<Cart/>} />
+        <Route path='/cart' element={<Cart />} />
+          <Route path='/order-summary' element={<OrderSummary />} /> {/* Chỉnh sửa từ component sang element */}
+          {/* <Route path="/ratings" component={Rating} /> */}
         <Route path='/login' element={<LoginSignup/>} />
 
       </Routes> 

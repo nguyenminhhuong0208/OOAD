@@ -26,6 +26,7 @@ const LoginSignup = () =>
         }).then((response)=>response.json()).then((data)=>responseDate=data);
         if (responseDate.success) {
             localStorage.setItem('auth-token',responseDate.token)
+            localStorage.setItem('name', responseDate.name)
             window.location.replace("/");
         }
         else {

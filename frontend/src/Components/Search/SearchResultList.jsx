@@ -1,7 +1,5 @@
 import React from 'react'
 import './SearchResultList.css'
-import { SearchResult } from './SearchResult'
-import { Link } from 'react-router-dom'
 import Item from '../Item/Item'
 const SearchResultList = ({results}) => {
  
@@ -15,7 +13,10 @@ const SearchResultList = ({results}) => {
                return (<Item 
                key={id}
                id={result.id}
-               name={result.name} />)
+               name={result.name} 
+               new_price={result.new_price}
+               old_price={result.old_price}/>
+               )
             })
         }
     </div>

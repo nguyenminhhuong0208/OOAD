@@ -1,7 +1,7 @@
 .result-list{
     position: absolute;
     top: 100px;
-    width: 500px;
+    width: 410px;
     left: -2px;
     background-color: white;
     /* width: 100%;
@@ -15,7 +15,37 @@
     overflow-x:  hidden; /* Enable horizontal scrolling */
     overflow-y:scroll; /*Disable vertical scrolling de co the scroll xuong */
     cursor: pointer;
+  flex-direction: column; /* Chỉnh theo chiều dọc */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  gap: 20px; /* Khoảng cách giữa các mục */
 }
+  
+  .result-list .item {
+    flex: 0 1 300px; /* Set a fixed size for the items */
+    padding: 20px;
+    font-size: 18px; /* Increase font size */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease; /* Smooth transform effect */
+  }
+  
+  .result-list .item:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+  }
+  
+  /* Specific styles for the item contents */
+  .result-list .item h2 {
+    font-size: 24px; /* Larger header */
+    margin-bottom: 10px;
+  }
+  
+  .result-list .item p {
+    font-size: 16px;
+    color: #666;
+  }
+  
 .buttonSearch{
     /* background-color: black; */
     width: 60px;

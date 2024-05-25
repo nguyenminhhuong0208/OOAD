@@ -256,7 +256,7 @@ const ShopContextProvider = (props)=>{
             .then((data)=>console.log(data));
         }
     }
-    {/*tính tổng giá các sản phẩm trong giỏ hàng */}
+    /*tính tổng giá các sản phẩm trong giỏ hàng */
     const getTotalCartAmount = () => {
         let totalAmount = 0;
         for (const item in cartItems) {
@@ -268,7 +268,7 @@ const ShopContextProvider = (props)=>{
         }
         return totalAmount;
     }
-    {/*hiển thị số sản phẩm trên biểu tượng giỏ hàng */}
+    /*hiển thị số sản phẩm trên biểu tượng giỏ hàng */
     const getTotalCartItems = () => {
         let totalItem = 0;
         for(const item in cartItems){

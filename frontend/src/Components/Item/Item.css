@@ -1,9 +1,12 @@
 .item {
   width: 350px;
 }
-
+.item a {
+  text-decoration: none;
+  color: black;
+}
 .item p {
-
+  color: black;
   margin: 6px 0px;
 
 }

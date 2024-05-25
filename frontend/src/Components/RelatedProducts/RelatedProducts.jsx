@@ -39,7 +39,7 @@ import axios from 'axios';
 import Item from "../Item/Item";
 
 const RelatedProducts = (props) => {
-  const [newCollection, setNewCollection] = useState([]);
+  const [ setNewCollection] = useState([]);
   const [fullProduct, setFullProduct] = useState([]);
   const { product } = props;
   const userName = localStorage.getItem('name');

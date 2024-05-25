@@ -3,6 +3,12 @@
 + Deadline cứ linh động lên. Đảm bảo chất lượng cho web không lỗi gì mới gửi người kia code tiếp. Nếu có lỗi thì ghi hẳn ra lỗi gì vào file readme đính kèm để người kia biết nhé
 
 
+# cách chạy dự án:
+- Đầu tiên cd vào backend, chạy server
+- sau khi chạy server rồi, mở terminal mới rồi chạy front end
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
